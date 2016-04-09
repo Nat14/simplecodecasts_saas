@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
        @profile = @user.build_profile
     end
     
-    def created
+    def create
        @user = User.find( params[:user_id] ) 
        @profile = @user.build_profile(profile_params)
        if @profile.save
